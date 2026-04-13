@@ -1,0 +1,33 @@
+<div class="m-3">
+    <div>
+        <h2 class="p-2 text-2xl font-medium">Product compenant</h2>
+    </div>
+    <table class="min-w-full border border-blue-200">
+        <thead class="bg-blue-200">
+            <tr>
+                <th class="p-2 border">Name</th>
+                <th class="p-2 border">Id</th>
+                <th class="p-2 border">price</th>
+                <th class="p-2 border">quantity</th>
+                <th class="p-2 border">selected</th>
+                <th class="p-2 border">Dellet</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            @if (products) {
+            @for (p of products; track p) {
+            <tr>
+                <td class="p-2 border">{{p.id}}</td>
+                <td class="p-2 border">{{p.name}}</td>
+                <td class="p-2 border">{{p.price}}</td>
+                <td class="p-2 border">{{p.quantity}}</td>
+                <td class="p-2 border">{{p.selected}}</td>
+                <td class="p-2 border">
+                    <button (click)="handleDellet(p)" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700"> Dellet</button>
+                </td>
+            </tr>
+          }}
+        </tbody>
+    </table>
+</div>
